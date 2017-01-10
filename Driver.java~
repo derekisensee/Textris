@@ -1,0 +1,8 @@
+package myTetrisClone;
+
+public class Textris {
+    public static void main (String[] args) {
+	Tetromino t = new Tetromino();
+	System.out.println(t.getShape());
+    }
+}
