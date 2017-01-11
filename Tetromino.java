@@ -6,17 +6,18 @@ public class Tetromino {
     
     public Tetromino() {
 	baseShape = "****";
+	currentShape = "*\n*\n*\n*";
     }
 
     public Tetromino(String s) {
-	baseShapeshape = s;
+	baseShape = s;
     }
 
     public String getShape() {
 	return currentShape;
     }
 
-    public String rotate() {
-	
+    public void rotate() {
+	currentShape += "NEW";
     }
 }
