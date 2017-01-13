@@ -1,21 +1,23 @@
 package Textris;
 
 public class Tetromino {
-    String shape;
+    String baseShape;
+    String currentShape;
     
     public Tetromino() {
-	shape = "****";
+	baseShape = "****";
+	currentShape = "*\n*\n*\n*";
     }
 
     public Tetromino(String s) {
-	shape = s;
+	baseShape = s;
     }
 
     public String getShape() {
-	return shape;
+	return currentShape;
     }
 
-    /*public rotate() {
-	
-      }*/
+    public void rotate() {
+	currentShape += "NEW";
+    }
 }

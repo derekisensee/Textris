@@ -28,7 +28,7 @@ public class Driver {
 	Tetromino t = new Tetromino();
 	System.out.println(t.getShape());
 
-	String[][] board = new String[20][10];
+	String[][] board = new String[22][10];
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
 		board[i][j] = ".";
