@@ -7,16 +7,22 @@ public class Driver {
 	    this.board = board;
 	}
 
+	public void checkEmpty() {
+
+	}
+	
 	public void run() {
 	    try {
 		for (int i = 0; i < board.length; i++) {
 		    for (int j = 0; j < board[i].length; j++) {
-			Thread.sleep(70);
+			//Thread.sleep(70); just a cute animation
 			System.out.print(board[i][j]);
 		    }
 		    System.out.println();
 		}
-		
+		while (board[0].equals("..........") {
+			// check for keypress, then check if board is empty at wanted key press
+	        }
 	    }
 	    catch (InterruptedException e) {
 		System.out.println(e.getMessage());
