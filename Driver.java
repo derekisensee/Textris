@@ -13,16 +13,20 @@ public class Driver {
 	
 	public void run() {
 	    try {
-		for (int i = 0; i < board.length; i++) {
+		for (int i = 0; i < board.length; i++) { // print empty board
 		    for (int j = 0; j < board[i].length; j++) {
-			//Thread.sleep(70); just a cute animation
+			Thread.sleep(70);
 			System.out.print(board[i][j]);
 		    }
 		    System.out.println();
 		}
-		while (board[0].equals("..........") {
-			// check for keypress, then check if board is empty at wanted key press
+		while (board[0].equals("..........") { // this will obvoiusly cause problems
+			Tetromino t = new Tetromino(2);
+			for (int i = 0; i < board.length; i++) {
+			    
+			}
 	        }
+		    System.out.println("Game over");
 	    }
 	    catch (InterruptedException e) {
 		System.out.println(e.getMessage());
