@@ -8,50 +8,51 @@ public class Tetromino {
 	if (n == 1) {
 	    shape = "****";
 	    x = 3;
-	    y = 20; // should i hardcode this?
+	    y = 2; // should i hardcode this?
 	} else if (n == 2) {
-	    shape = "*\n**\n *";
+	    shape = "*A**A *";
 	    x = 4;
-	    y = 20;
+	    y = 2;
 	} else if (n == 3) {
-	    shape = "**\n**";
+	    shape = "**A**";
 	    x = 4;
-	    y = 20;
+	    y = 2;
 	} else if (n == 4) {
-	    shape = "*\n**\n*";
+	    shape = "*A**A*";
 	    x = 4;
-	    y = 20;
+	    y = 2;
 	} else if (n == 5) {
-	    shape = "*\n*\n**";
+	    shape = "*A*A**";
 	    x = 4;
-	    y = 20;
+	    y = 2;
 	}
     }
 
     public String rotate(String cur, String in) {
 	if (cur.equals("****")) { // straight tetro
-	    return "*\n*\n*\n*";
+	    return "*A*A*A*";
 	}
-        if (cur.equals("*\n*\n*\n*")) {
+        if (cur.equals("*A*A*A*")) {
 	    return "****";
 	}
 
-	if (cur.equals("**\n**")) { // square tetro
-	    return "**\n**";
+	if (cur.equals("**A**")) { // square tetro
+	    return "**A**";
 	}
 
-	if (cur.equals("*\n**\n *") && in.equals("q")) { // stuck-out tetro
-	    return " *\n***";
+	if (cur.equals("*A**A *") && in.equals("q")) { // stuck-out tetro
+	    return " *A***";
 	}
-	if (cur.equals(" *\n***") && in.equals("q")) {
-	    return " *\n**\n *";
+	if (cur.equals(" *A***") && in.equals("q")) {
+	    return " *A**A *";
 	}
-	if (cur.equals(" *\n**\n *") && in.equals("q")) { 
-	    return "***\n *";
+	if (cur.equals(" *A**A *") && in.equals("q")) { 
+	    return "***A *";
 	}
-	if (cur.equals("***\n *") && in.equals("q")) { 
-	    return "*\n**\n*";
+	if (cur.equals("***A *") && in.equals("q")) { 
+	    return "*A**A*";
 	}
+	return "****";
     }
 	    
     public String getShape() {
@@ -64,5 +65,21 @@ public class Tetromino {
 
     public int getY() {
 	return y;
+    }
+
+    public void incX() {
+	x++;
+    }
+
+    public void incY() {
+	y++;
+    }
+
+    public void decX() {
+	x--;
+    }
+
+    public void decY() {
+	y--;
     }
 }
