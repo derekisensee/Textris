@@ -9,7 +9,7 @@ public class Tetromino {
         if (n == 1) {
             shape = "****";
             x = 3;
-            y = 2; // should i hardcode this?
+            y = 1; // should i hardcode this?
         } else if (n == 2) {
             shape = "*A**A *";
             x = 4;
@@ -60,9 +60,9 @@ public class Tetromino {
         if (getShape().equals("*A**A *")) {
             return y;
         }
-	if (getShape().equals("****")) {
-	    return y;
-	}
+        if (getShape().equals("****")) {
+            return y;
+        }
         return y;
     }
 	    
