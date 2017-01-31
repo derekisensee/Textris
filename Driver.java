@@ -16,7 +16,7 @@ public class Driver {
 			System.out.print(board[i][j]);
                 }
                 System.out.println();
-            
+		}
             while (board[0][5].equals(".")) { // this will obvoiusly cause problems. or will it?
                 Tetromino t = new Tetromino(1); // this just works okay
                 while (t.getY() < 21) { // while the tetro hasn't reached the "current" bottom of the screen. will have to correct this.
@@ -76,14 +76,12 @@ public class Driver {
                     }
                 }
             }
-		}
 	    }
-            System.out.println("Game over");
-	    }
+	}
+	    
 	    catch (InterruptedException e) {
 		    System.out.println(e.getMessage());
 	    }
-	}
     }
     
 	public static void main (String[] args) {
