@@ -60,7 +60,7 @@ public class Tetromino {
         if (getShape().equals("*A**A *")) {
             return y + 2;
         }
-        return y + 2;
+        return y;
     }
 	    
     public String getShape() {

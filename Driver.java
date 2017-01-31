@@ -6,10 +6,6 @@ public class Driver {
 	StartGame(String[][] board) {
 	    this.board = board;
 	}
-
-	public void checkEmpty() {
-
-	}
 	
 	public void run() {
 	    try {
@@ -22,14 +18,14 @@ public class Driver {
                 System.out.println();
             }
             while (board[21][2].equals(".")) { // this will obvoiusly cause problems. or will it?
-                Tetromino t = new Tetromino((int)(Math.random() * (5 - 1))); // this just works okay
+                Tetromino t = new Tetromino((int)(Math.random() * (3 - 1))); // this just works okay
                 while (t.getY() < 21) { // while the tetro hasn't reached the "current" bottom of the screen. will have to correct this.
                     int y = t.getX(); int currY = y;
                     int x = t.getY(); int currX = x;
 
                     String[] chopped = t.getShape().split("A");
 
-                    if (t.getBottom() == 20 || board[x][t.getBottom()].equals("#")) { // if we reach the bottom of the board
+                    if (t.getBottom() == 20 || board[t.getBottom() + 1][y].equals("#")) { // if we reach the bottom of the board
                         for (int i = 0; i < board.length; i++) {
                             for (int j = 0; j < board[0].length; j++) {
                                 if (board[i][j].equals("*")) {
