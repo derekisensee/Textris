@@ -10,23 +10,22 @@ public class Driver {
 	public void run() {
 	    try {
 	        Scanner in = new Scanner(System.in);
-            for (int i = 0; i < board.length; i++) { // print empty board
-                for (int j = 0; j < board[i].length; j++) {
-                //Thread.sleep(70); cute animation
-                System.out.print(board[i][j]);
+		for (int i = 0; i < board.length; i++) { // print empty board
+		    for (int j = 0; j < board[i].length; j++) {
+			//Thread.sleep(70); cute animation
+			System.out.print(board[i][j]);
                 }
                 System.out.println();
-            }
-            while (board[21][2].equals(".")) { // this will obvoiusly cause problems. or will it?
-                Tetromino t = new Tetromino(2); // this just works okay
+            
+            while (board[0][5].equals(".")) { // this will obvoiusly cause problems. or will it?
+                Tetromino t = new Tetromino(1); // this just works okay
                 while (t.getY() < 21) { // while the tetro hasn't reached the "current" bottom of the screen. will have to correct this.
                     int y = t.getX(); int currY = y;
                     int x = t.getY(); int currX = x;
 
-                    String[] chopped = t.getShape().split("A");
-
-                    if (t.getBottom() == 21 || board[t.getBottom() + 1][y].equals("#")) { // if we reach the bottom of the board
-                        for (int i = 0; i < board.length; i++) {
+                    String[] chopped = t.getShape().split("A"); // have to include a clause for shapes without A's
+                    if (((t.getShape().equals("****") && t.getBottom() == 21) || t.getBottom() <= 21 && board[t.getBottom() + 1][y].equals("#")) || t.getBottom() == 20) { // if we reach the bottom of the board or if we hit another piece once the thread goes. dumb hacks included.
+			for (int i = 0; i < board.length; i++) {
                             for (int j = 0; j < board[0].length; j++) {
                                 if (board[i][j].equals("*")) {
                                     board[i][j] = "#";
@@ -42,7 +41,7 @@ public class Driver {
                             }
                             System.out.println();
                         }
-                        t = new Tetromino((int)(Math.random() * (5 - 1)));
+                        t = new Tetromino(1);
                     }
                     else {
                         for (int i = 0; i < board.length; i++) {
@@ -64,7 +63,7 @@ public class Driver {
                             currX++;
                         }
 
-                        Thread.sleep(300);
+                        Thread.sleep(900);
                         System.out.println("-------------");
                         for (int i = 0; i < board.length; i++) {
                             for (int j = 0; j < board[0].length; j++) {
@@ -73,9 +72,12 @@ public class Driver {
                             System.out.println();
                         }
                         t.incY();
+			
                     }
                 }
             }
+		}
+	    }
             System.out.println("Game over");
 	    }
 	    catch (InterruptedException e) {

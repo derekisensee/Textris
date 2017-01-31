@@ -60,34 +60,37 @@ public class Tetromino {
         if (getShape().equals("*A**A *")) {
             return y;
         }
+	if (getShape().equals("****")) {
+	    return y;
+	}
         return y;
     }
 	    
     public String getShape() {
-	    return shape;
+	return shape;
     }
 
     public int getX() {
-	    return x;
+	return x;
     }
 
     public int getY() {
-	    return y;
+	return y;
     }
 
     public void incX() {
-	    x++;
+	x++;
     }
 
     public void incY() {
-	    y++;
+	y++;
     }
 
     public void decX() {
-	    x--;
+	x--;
     }
 
     public void decY() {
-	    y--;
+	y--;
     }
 }
