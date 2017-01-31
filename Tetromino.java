@@ -58,7 +58,7 @@ public class Tetromino {
 
     public int getBottom() {
         if (getShape().equals("*A**A *")) {
-            return y + 2;
+            return y;
         }
         return y;
     }
