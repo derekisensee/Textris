@@ -92,10 +92,10 @@ public class Driver {
                             String input = in.nextLine();
 
                             if (input.equals("a")) {
-                                currY -= 1;
+                                t.decX();
                             }
                             if (input.equals("d")) {
-                                currY += 1;
+                                t.incX();
                             }
 
                             for (int i = 0; i < board.length; i++) { // clears Tetro's previous spot

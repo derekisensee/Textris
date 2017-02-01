@@ -84,16 +84,26 @@ public class Tetromino {
 	return y;
     }
 
-    public void incX() {
-	x++;
+    public void incX() { // TODO: Better bounds checking
+	if (x == 0)
+	    x = 0;
+	else if (x == 9)
+	    x = 9;
+	else
+	    x++;
     }
 
     public void incY() {
 	y++;
     }
 
-    public void decX() {
-	x--;
+    public void decX() { // TODO: Better bounds checking
+        if (x == 0)
+	    x = 0;
+	else if (x == 9)
+	    x = 9;
+	else
+	    x--;
     }
 
     public void decY() {
