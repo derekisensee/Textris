@@ -9,11 +9,11 @@ public class Tetromino {
         if (n == 1) {
             shape = "****";
             x = 3;
-            y = 1; // should i hardcode this?
+            y = 0; // should i hardcode this?
         } else if (n == 2) {
             shape = "*A**A *";
             x = 4;
-            y = 2;
+            y = 0;
         } else if (n == 3) {
             shape = "**A**";
             x = 4;
@@ -62,6 +62,12 @@ public class Tetromino {
         }
         if (getShape().equals("****")) {
             return y;
+        }
+        if (getShape().equals("**A**")) {
+            return y;
+        }
+        if (getShape().equals("*A**A*")) {
+            return y + 1;
         }
         return y;
     }
